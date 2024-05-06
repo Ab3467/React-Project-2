@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import QUESTIONS from './Questions.js';
 
+
+
 export default function Quiz() {
 const [UserAnswers,setUserAnswers] = useState([]);
 
@@ -13,9 +15,9 @@ function HandleSelectAnswer(selectAnswer){
 }
  
 
-  // Check if QUESTIONS[ActiveQuestionIndex] exists before rendering
- 
-    return (
+
+return (
+    <div className="quiz">
       <div id="question">
         <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
         <ul id="answers">
@@ -26,6 +28,7 @@ function HandleSelectAnswer(selectAnswer){
             )))}
          
         </ul>
+      </div>
       </div>
     );
   } 
