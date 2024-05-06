@@ -6,8 +6,10 @@ const [UserAnswers,setUserAnswers] = useState([]);
 
 const activeQuestionIndex = UserAnswers.length;
 
-function HandleSelectAnswer(){
-    
+function HandleSelectAnswer(selectAnswer){
+    setUserAnswers((prevAnswers=>{
+        return [...prevAnswers,selectAnswer];
+    }))
 }
  
 
@@ -15,11 +17,14 @@ function HandleSelectAnswer(){
  
     return (
       <div id="question">
-        <h2></h2>
+        <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
         <ul id="answers">
-         <li>
-              <button></button>
-            </li>
+            {QUESTIONS[activeQuestionIndex].answers.map((answer=>(
+         <li key={answer} className='answer'>
+        <button onClick={HandleSelectAnswer}>{answer}</button>
+        </li>
+            )))}
+         
         </ul>
       </div>
     );
