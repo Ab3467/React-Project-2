@@ -2,7 +2,14 @@ import React,{useState} from 'react'
 import QUESTIONS from "./Questions.js"
 
 export default function Quiz() {
-const {UserAnswers,setAnswers} = useState(0) 
+const {UserAnswers,setUserAnswers} = useState([]) 
+
+
+function HandleSelectAnswer(selectedAnswer){
+ setUserAnswers((prevUserAns=>{
+    return [...prevUserAns,selectedAnswer]
+ }))
+}
 
 const ActiveQuestionIndex = UserAnswers.length;
   return (
@@ -11,7 +18,7 @@ const ActiveQuestionIndex = UserAnswers.length;
     <ul id="answers">
         {QUESTIONS[ActiveQuestionIndex].answers.map(answer=>{
         <li key={answer} className='answer'>
-            <button>{answer}</button>
+            <button onClick={HandleSelectAnswer}>{answer}</button>
         </li>
         })}
     </ul>
