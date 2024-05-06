@@ -1,9 +1,8 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 export default function Quiz() {
+const {activeQs,setActiveQs} = useState('') 
   return (
-    <div>
-      
-    </div>
+    <p>Currently Active Questions</p>
   )
 }
