@@ -8,8 +8,7 @@ export default function Quiz() {
 const [UserAnswers,setUserAnswers] = useState([]);
 
 const activeQuestionIndex = UserAnswers.length;
-const shuffledAnswers = [...QUESTIONS[activeQuestionIndex].answers]
-shuffledAnswers.sort(()=> Math.random()- 0.5)
+
 
 
 const IsQuizComplt = activeQuestionIndex === QUESTIONS.length;
@@ -28,6 +27,8 @@ if(IsQuizComplt){
     </div>
 }
 
+const shuffledAnswers = [...QUESTIONS[activeQuestionIndex].answers]
+shuffledAnswers.sort(()=> Math.random()- 0.5)
 
 return (
     <div id="quiz">

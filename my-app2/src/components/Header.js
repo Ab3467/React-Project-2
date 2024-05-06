@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from "../assets/Quiz.jpg"  
+import Image from "../assets/quiz-logo.png"  
 
 
 export default function Header() {
