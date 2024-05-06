@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import QUESTIONS from './Questions.js';
 import quizComplt from "../assets/quiz-complete.png"
+import QuestionTimer from './QuestionTimer.js';
 
 
 
