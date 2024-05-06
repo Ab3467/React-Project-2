@@ -6,7 +6,10 @@ export default function App() {
   return (
     <>
     <Header/>
+    <main>
     <Quiz/>
+    <Quiz/>
+   </main>
     </>
   )
 }
