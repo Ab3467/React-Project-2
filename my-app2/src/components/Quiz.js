@@ -1,12 +1,12 @@
 import React,{useState} from 'react'
 
 export default function Quiz() {
-const {Answers,setAnswers} = useState(0) 
+const {UserAnswers,setAnswers} = useState(0) 
 
-const ActiveQuestionIndex = Answers.length;
+const ActiveQuestionIndex = UserAnswers.length;
   return (
     <div id="question">
-    <p>Currently Active Questions</p>
+    <h1>{QUESTIONS[ActiveQuestionIndex].text}</h1>
     <ul id="answers">
         {}
     </ul>
