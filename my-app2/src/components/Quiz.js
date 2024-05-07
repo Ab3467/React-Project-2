@@ -29,6 +29,7 @@ if(IsQuizComplt){
         <img src={quizComplt} alt="Quiz complete" />
         <h2>Quiz Completed!</h2>
     </div>
+    
 }
 
 const shuffledAnswers = [...QUESTIONS[activeQuestionIndex].answers]
