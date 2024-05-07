@@ -37,7 +37,7 @@ shuffledAnswers.sort(()=> Math.random()- 0.5)
 return (
     <div id="quiz">
       <div id="question">
-        <QuestionTimer timeout={20000} onTimeOut={HandleSkipAnswer}/>
+        <QuestionTimer timeout={10000} onTimeOut={HandleSkipAnswer}/>
         <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
         <ul id="answers">
             {shuffledAnswers.map((answer=>(
