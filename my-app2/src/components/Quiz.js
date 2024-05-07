@@ -5,14 +5,25 @@ import quizComplt from "../assets/quiz-complete.png"
 import QuestionTimer from './QuestionTimer.js';
 
 export default function Quiz() {
+  const [AnswerState,setAnswerState] = useState('')
   const [userAnswers, setUserAnswers] = useState([]);
+
   const activeQuestionIndex = userAnswers.length;
   const isQuizComplete = activeQuestionIndex === QUESTIONS.length;
 
   const handleSelectAnswer = (selectAnswer) => {
+    setAnswerState('Answered')
     setUserAnswers((prevAnswers) => [...prevAnswers, selectAnswer]);
   };
+   
 
+  setTimeout(() => {
+    if(selectAnswer=== QUESTIONS[activeQuestionIndex].answers[0]){
+        setAnswerState('Correct')
+    }
+  }, 1000);
+  
+  
   const handleSkipAnswer = () => {
     handleSelectAnswer(null);
   };
