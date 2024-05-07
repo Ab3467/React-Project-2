@@ -69,44 +69,4 @@ export default [
         'Using an if-else statement.',
       ],
     },
-    {
-        id: 'q8',
-        text: 'Which approach can NOT be used to render content conditionally?',
-        answers: [
-          'Using a the #if template syntax.',
-          'Using a ternary operator.',
-          'Using the && operator.',
-          'Using an if-else statement.',
-        ],
-      },
-      {
-        id: 'q9',
-        text: 'Which approach can NOT be used to render content conditionally?',
-        answers: [
-          'Using a the #if template syntax.',
-          'Using a ternary operator.',
-          'Using the && operator.',
-          'Using an if-else statement.',
-        ],
-      },
-      {
-        id: 'q10',
-        text: 'Which approach can NOT be used to render content conditionally?',
-        answers: [
-          'Using a the #if template syntax.',
-          'Using a ternary operator.',
-          'Using the && operator.',
-          'Using an if-else statement.',
-        ],
-      },
-      {
-        id: 'q11',
-        text: 'Which approach can NOT be used to render content conditionally?',
-        answers: [
-          'Using a the #if template syntax.',
-          'Using a ternary operator.',
-          'Using the && operator.',
-          'Using an if-else statement.',
-        ],
-      },
-  ];
+];
