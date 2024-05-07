@@ -8,7 +8,7 @@ export default function Quiz() {
   const [AnswerState,setAnswerState] = useState('')
   const [userAnswers, setUserAnswers] = useState([]);
 
-  const activeQuestionIndex = userAnswers.length;
+  const activeQuestionIndex = AnswerState === '' ? userAnswers.length : userAnswers.length - 1;
   const isQuizComplete = activeQuestionIndex === QUESTIONS.length;
 
   const handleSelectAnswer = useCallback(function handleSelectAnswer(selectAnswer) {
