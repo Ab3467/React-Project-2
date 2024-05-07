@@ -56,9 +56,13 @@ export default function Quiz() {
           {shuffledAnswers.map((answer) => {
             let isSelected = userAnswers[userAnswers.length -1] === answer;
             let cssClass ='';
+
             if(AnswerState === 'answered' && isSelected){
               cssClass = 'selected';
+            }
 
+            if((AnswerState === 'correct' || AnswerState === 'wrong') && isSelected){
+                cssClass = AnswerState;
             }
 
            return <li key={answer} className='answer'>
