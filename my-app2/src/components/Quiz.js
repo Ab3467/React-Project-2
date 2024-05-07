@@ -9,15 +9,12 @@ export default function Quiz() {
 const [UserAnswers,setUserAnswers] = useState([]);
 
 const activeQuestionIndex = UserAnswers.length;
-
-
-
 const IsQuizComplt = activeQuestionIndex === QUESTIONS.length;
 
+
+
 const HandleSelectAnswer= useCallback(function HandleSelectAnswer(selectAnswer){
-    setUserAnswers((prevAnswers)=>{
-        return [...prevAnswers,selectAnswer];
-    })
+    setUserAnswers((prevAnswers)=>[...prevAnswers,selectAnswer]);
 },[]);
  
 
@@ -38,7 +35,7 @@ shuffledAnswers.sort(()=> Math.random()- 0.5)
 return (
     <div id="quiz">
       <div id="question">
-        <QuestionTimer timeout={10000} onTimeOut={HandleSkipAnswer}/>
+      <QuestionTimer timeout={10000} onTimeOut={HandleSkipAnswer} />
         <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
         <ul id="answers">
             {shuffledAnswers.map((answer=>(
