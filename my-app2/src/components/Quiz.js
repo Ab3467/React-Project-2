@@ -11,20 +11,21 @@ export default function Quiz() {
   const activeQuestionIndex = userAnswers.length;
   const isQuizComplete = activeQuestionIndex === QUESTIONS.length;
 
-  const handleSelectAnswer = useCallback(function handleSelectAnswer(selectAnswer){
-    setAnswerState('Answered')
-    setUserAnswers((prevAnswers) =>{
-        [...prevAnswers, selectAnswer];
-    } );
-   setTimeout(() => {
-    if(selectAnswer=== QUESTIONS[activeQuestionIndex].answers[0]){
-        setAnswerState('Correct')
-    }else{
-        setAnswerState('Wrong')
+  const handleSelectAnswer = useCallback(function handleSelectAnswer(selectAnswer) {
+    setAnswerState('Answered');
+    setUserAnswers((prevAnswers) => [...prevAnswers, selectAnswer]);
+    
+    if (selectAnswer === QUESTIONS[activeQuestionIndex].answers[0]) {
+      setTimeout(() => {
+        setAnswerState('Correct');
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        setAnswerState('Wrong');
+      }, 1000);
     }
-  }, 1000);
-},
-[activeQuestionIndex])
+  }, [activeQuestionIndex]);
+  
   
   
   const handleSkipAnswer = () => {
