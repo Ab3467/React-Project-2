@@ -14,16 +14,14 @@ const activeQuestionIndex = UserAnswers.length;
 
 const IsQuizComplt = activeQuestionIndex === QUESTIONS.length;
 
-function HandleSelectAnswer(selectAnswer){
+const HandleSelectAnswer= useCallback(function HandleSelectAnswer(selectAnswer){
     setUserAnswers((prevAnswers=>{
         return [...prevAnswers,selectAnswer];
     }))
-}
+});
  
 
-const handleSkipAnswer = useCallback(()=>{
-
-});
+const HandleSkipAnswer = useCallback(()=>HandleSelectAnswer(null),[HandleSelectAnswer]);
 
 
 if(IsQuizComplt){
