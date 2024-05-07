@@ -15,9 +15,9 @@ const activeQuestionIndex = UserAnswers.length;
 const IsQuizComplt = activeQuestionIndex === QUESTIONS.length;
 
 const HandleSelectAnswer= useCallback(function HandleSelectAnswer(selectAnswer){
-    setUserAnswers((prevAnswers=>{
+    setUserAnswers((prevAnswers)=>{
         return [...prevAnswers,selectAnswer];
-    }))
+    })
 },[]);
  
 
