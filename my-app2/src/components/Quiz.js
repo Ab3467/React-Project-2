@@ -1,11 +1,11 @@
 // Quiz.js
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import QUESTIONS from './Questions.js';
 import quizComplt from "../assets/quiz-complete.png"
 import QuestionTimer from './QuestionTimer.js';
 
 export default function Quiz() {
-  const shuffledAnswers =;
+  const shuffledAnswers = useRef();
   const [AnswerState,setAnswerState] = useState('')
   const [userAnswers, setUserAnswers] = useState([]);
   
@@ -56,25 +56,7 @@ export default function Quiz() {
       <div id="question">
         <QuestionTimer key={activeQuestionIndex} timeout={10000} onTimeOut={handleSkipAnswer} />
         <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
-        <ul id="answers">
-          {shuffledAnswers.current.map((answer) => {
-            let isSelected = userAnswers[userAnswers.length -1] === answer;
-            let cssClass ='';
-
-            if (AnswerState === 'Answered' && isSelected) {
-                cssClass = 'selected';
-              }
-              
-              if ((AnswerState === 'Correct' || AnswerState === 'Wrong') && isSelected) {
-                cssClass = AnswerState.toLowerCase(); // Convert to lowercase for consistency
-              }
-              
-
-           return <li key={answer} className='answer'>
-              <button onClick={() => handleSelectAnswer(answer)} className={cssClass}>{answer}</button>
-            </li>
-          } )}
-        </ul>
+        
       </div>
     </div>
   );
