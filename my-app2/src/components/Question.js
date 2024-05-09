@@ -27,7 +27,9 @@ export default function Question({index,onSelectAnswer,onSkipAnswer}) {
     }
 
     let AnswerState = '';
-     if(answer.selectedAnswer)
+     if(answer.selectedAnswer && answer.isCorrect !== null){
+        AnswerState = answer.isCorrect ? 'correct' : 'wrong'
+     }
 
   return (
     <div id="question">
