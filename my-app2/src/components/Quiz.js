@@ -5,8 +5,10 @@ import quizComplt from "../assets/quiz-complete.png"
 import QuestionTimer from './QuestionTimer.js';
 
 export default function Quiz() {
+  const shuffledAnswers =;
   const [AnswerState,setAnswerState] = useState('')
   const [userAnswers, setUserAnswers] = useState([]);
+  
 
   const activeQuestionIndex = AnswerState === '' ? userAnswers.length : userAnswers.length - 1;
   const isQuizComplete = activeQuestionIndex === QUESTIONS.length;
@@ -44,8 +46,10 @@ export default function Quiz() {
     );
   }
 
-  const shuffledAnswers = [...QUESTIONS[activeQuestionIndex].answers];
-  shuffledAnswers.sort(() => Math.random() - 0.5);
+  if(!shuffledAnswers.current){
+  shuffledAnswers.current = [...QUESTIONS[activeQuestionIndex].answers];
+  shuffledAnswers.current.sort(() => Math.random() - 0.5);
+  }
 
   return (
     <div id="quiz">
