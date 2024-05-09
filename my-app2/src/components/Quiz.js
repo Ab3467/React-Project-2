@@ -57,7 +57,7 @@ export default function Quiz() {
         <QuestionTimer key={activeQuestionIndex} timeout={10000} onTimeOut={handleSkipAnswer} />
         <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
         <ul id="answers">
-          {shuffledAnswers.map((answer) => {
+          {shuffledAnswers.current.map((answer) => {
             let isSelected = userAnswers[userAnswers.length -1] === answer;
             let cssClass ='';
 
