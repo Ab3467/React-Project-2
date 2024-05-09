@@ -53,11 +53,11 @@ export default function Quiz() {
     <div id="quiz">
       <Question 
       key={activeQuestionIndex}
-      questionText={QUESTIONS[activeQuestionIndex].text }
-      answers={QUESTIONS[activeQuestionIndex].answers}
-      onSelectAnswer={handleSelectAnswer}
-      selectedAnswer={userAnswers[userAnswers.length -1]}
+      // questionText={QUESTIONS[activeQuestionIndex].text }
+      // answers={QUESTIONS[activeQuestionIndex].answers}
+      // selectedAnswer={userAnswers[userAnswers.length -1]}
       // AnswerState={AnswerState}
+      onSelectAnswer={handleSelectAnswer}
       onSkipAnswer={handleSkipAnswer}
       />
     </div>
