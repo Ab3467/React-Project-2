@@ -7,6 +7,16 @@ export default function Question({questionText,answers,onSelectAnswer,selectedAn
         selectedAnswer:'',
         isCorrect: null,
     })
+
+    function HandleSelectAnswer(answer){
+      setAnswer(
+        {
+            selectedAnswer: answer,
+            isCorrect:null,
+        }
+      )
+    }
+
   return (
     <div id="question">
     <QuestionTimer timeout={10000} onTimeOut={onSelectAnswer} />
@@ -15,7 +25,7 @@ export default function Question({questionText,answers,onSelectAnswer,selectedAn
     answers={answers}
     selectedAnswers={selectedAnswer}
     AnswerState={AnswerState} 
-    onSelect={onSelectAnswer}
+    onSelect={HandleSelectAnswer}
     
     />
     
