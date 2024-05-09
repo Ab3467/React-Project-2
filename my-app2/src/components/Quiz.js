@@ -7,7 +7,6 @@ import Answers from './Answers.js';
 
 
 export default function Quiz() {
-  const shuffledAnswers = useRef();
   const [AnswerState,setAnswerState] = useState('')
   const [userAnswers, setUserAnswers] = useState([]);
   
@@ -48,10 +47,7 @@ export default function Quiz() {
     );
   }
 
-  if(!shuffledAnswers.current){
-  shuffledAnswers.current = [...QUESTIONS[activeQuestionIndex].answers];
-  shuffledAnswers.current.sort(() => Math.random() - 0.5);
-  }
+  
 
   return (
     <div id="quiz">
