@@ -1,7 +1,7 @@
 // Quiz.js
 import React, { useCallback, useState } from 'react';
 import QUESTIONS from './Questions.js';
-
+import Summary from './Summary.js';
 import Question from './Question.js';
 
 
@@ -26,6 +26,10 @@ export default function Quiz() {
     handleSelectAnswer(null),
     [handleSelectAnswer]
 );
+
+if(isQuizComplete){
+  return <Summary userAnswers={userAnswers}/>
+}
 
  
   return (
