@@ -18,7 +18,7 @@ export default function Question({index,onSelectAnswer,onSkipAnswer}) {
         setTimeout(() => {
             setAnswer({
                 selectedAnswer: answer,
-                isCorrect: QUESTIONS[key].answers[0] === answer,
+                isCorrect: QUESTIONS[index].answers[0] === answer,
             })
         setTimeout(() => {
                 onSelectAnswer(answer);
@@ -32,9 +32,9 @@ export default function Question({index,onSelectAnswer,onSkipAnswer}) {
   return (
     <div id="question">
     <QuestionTimer timeout={10000} onTimeOut={onSkipAnswer} />
-    <h2>{QUESTIONS[key].text}</h2>
+    <h2>{QUESTIONS[index].text}</h2>
     <Answers 
-    answers={QUESTIONS[key].answers}
+    answers={QUESTIONS[index].answers}
     selectedAnswers={answer.selectedAnswer}
     AnswerState={AnswerState} 
     onSelect={HandleSelectAnswer}
