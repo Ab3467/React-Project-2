@@ -22,9 +22,10 @@ export default function Quiz() {
   
   
   
-  const handleSkipAnswer = () => {
-    handleSelectAnswer(null);
-  };
+  const handleSkipAnswer = useCallback(()=> 
+    handleSelectAnswer(null),
+    [handleSelectAnswer]
+);
 
   if (isQuizComplete) {
     return (
