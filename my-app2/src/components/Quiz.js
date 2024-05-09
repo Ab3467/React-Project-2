@@ -7,30 +7,20 @@ import Question from './Question.js';
 
 
 export default function Quiz() {
-  const [AnswerState,setAnswerState] = useState('')
   const [userAnswers, setUserAnswers] = useState([]);
   
 
-  const activeQuestionIndex = AnswerState === '' ? userAnswers.length : userAnswers.length - 1;
+  const activeQuestionIndex = userAnswers.length;
   const isQuizComplete = activeQuestionIndex === QUESTIONS.length;
 
   const handleSelectAnswer = useCallback(function handleSelectAnswer(selectAnswer) {
-    setAnswerState('Answered');
-    setUserAnswers((prevAnswers) => [...prevAnswers, selectAnswer]);
-    
-    if (selectAnswer === QUESTIONS[activeQuestionIndex].answers[0]) {
-      setTimeout(() => {
-        setAnswerState('Correct');
-      }, 1000);
-    } else {
-      setTimeout(() => {
-        setAnswerState('Wrong');
-      }, 1000);
-    }
-    setTimeout(() => {
-        setAnswerState('')
-    }, 2000);
-  }, [activeQuestionIndex]);
+     setUserAnswers((prevAnswers) => {
+     return [...prevAnswers, selectAnswer];
+     });
+  
+      
+  }, [activeQuestionIndex]
+);
   
   
   
