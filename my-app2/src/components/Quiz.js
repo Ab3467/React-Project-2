@@ -1,5 +1,5 @@
 // Quiz.js
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import QUESTIONS from './Questions.js';
 import quizComplt from "../assets/quiz-complete.png"
 import QuestionTimer from './QuestionTimer.js';
