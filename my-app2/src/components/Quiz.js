@@ -40,7 +40,7 @@ export default function Quiz() {
   return (
     <div id="quiz">
       <Question 
-      key={activeQuestionIndex}
+      index={activeQuestionIndex}
       // questionText={QUESTIONS[activeQuestionIndex].text }
       // answers={QUESTIONS[activeQuestionIndex].answers}
       // selectedAnswer={userAnswers[userAnswers.length -1]}
