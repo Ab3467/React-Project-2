@@ -1,7 +1,7 @@
 // Quiz.js
 import React, { useCallback, useState } from 'react';
 import QUESTIONS from './Questions.js';
-import quizComplt from "../assets/quiz-complete.png"
+
 import Question from './Question.js';
 
 
@@ -27,17 +27,7 @@ export default function Quiz() {
     [handleSelectAnswer]
 );
 
-  if (isQuizComplete) {
-    return (
-      <div id="summary">
-        <img src={quizComplt} alt="Quiz complete" />
-        <h2>Quiz Completed!</h2>
-      </div>
-    );
-  }
-
-  
-
+ 
   return (
     <div id="quiz">
       <Question 
