@@ -17,8 +17,8 @@ export default function Quiz() {
      setUserAnswers((prevAnswers) => {
      return [...prevAnswers, selectAnswer];
      });
-  }, [activeQuestionIndex]
-);
+  }, 
+  []);
   
   
   
