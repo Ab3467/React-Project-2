@@ -3,7 +3,7 @@ import QuestionTimer from './QuestionTimer'
 import Answers from './Answers'
 import QUESTIONS from "./Questions.js"
 
-export default function Question() {
+export default function Question({questionText,answers,onSelectAnswer}) {
   return (
     <div id="question">
     <QuestionTimer key={activeQuestionIndex} timeout={10000} onTimeOut={handleSkipAnswer} />
