@@ -3,6 +3,8 @@ import React, { useCallback, useRef, useState } from 'react';
 import QUESTIONS from './Questions.js';
 import quizComplt from "../assets/quiz-complete.png"
 import QuestionTimer from './QuestionTimer.js';
+import Answers from './Answers.js';
+
 
 export default function Quiz() {
   const shuffledAnswers = useRef();
@@ -56,7 +58,7 @@ export default function Quiz() {
       <div id="question">
         <QuestionTimer key={activeQuestionIndex} timeout={10000} onTimeOut={handleSkipAnswer} />
         <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
-        
+        <Answers answers={QUESTIONS[activeQuestionIndex].answers} selectedAnswers={userAnswers[userAnswers.length -1]} />
       </div>
     </div>
   );
@@ -64,4 +66,3 @@ export default function Quiz() {
 
 
 
-/// yeah its just for contribution....
