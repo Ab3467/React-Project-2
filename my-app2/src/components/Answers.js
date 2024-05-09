@@ -12,19 +12,22 @@ export default function Answers({answers,AnswerState,selectedAnswers,onSelect}) 
             let isSelected = selectedAnswers === answer;
             let cssClass ='';
 
-            if (AnswerState === 'Answered' && isSelected) {
+            if (AnswerState === 'answered' && isSelected) {
                 cssClass = 'selected';
               }
               
-              if ((AnswerState === 'Correct' || AnswerState === 'Wrong') && isSelected) {
-                cssClass = AnswerState.toLowerCase(); // Convert to lowercase for consistency
+              if ((AnswerState === 'correct' || AnswerState === 'wrong') && isSelected)
+               {
+                cssClass = AnswerState; // Convert to lowercase for consistency
               }
               
 
-           return <li key={answer} className='answer'>
-              <button onClick={() => onSelect(answer)} className={cssClass}>{answer}</button>
+           return(
+             <li key={answer} className='answer'>
+              <button onClick={() => onSelect(answer)} className={cssClass} disabled={AnswerState !== ''}>{answer}</button>
             </li>
-          } )}
+          );
+     })}
         </ul>
-  )
+  );
 }
